@@ -3,7 +3,7 @@ import './style.css';
 import {Rating} from './rating.model.ts';
 import {ratingEs5} from './rating-es5.model';
 import {ratingHalfStarEs5} from './rating-half-es5.model';
-
+import {ratingHalfStarExtendEs5} from './rating-es5-extend.model';
 const num = 3;
 // 第一种ES6实现
 const rating =  new Rating('#rating-full-star', num);
@@ -25,7 +25,7 @@ const ratingFullStarEs5 = ratingEs5.init('#rating-full-star-es5', {
 // 第三种选择半颗ES5实现
   document.querySelector('#select-rating-type').onchange = 
   function (event) {
-    const ratingHalfEs5 = ratingHalfStarEs5.init('#rating-half-star-es5', {
+    const ratingHalfEs5 = ratingHalfStarExtendEs5.init('#rating-half-star-es5', {
     num: 2.5,
     model: event.target.value,
       select: function (event, num, total) {
