@@ -95,6 +95,8 @@ export const ratingHalfStarEs5 = (function(){
     num = parseInt(num);
     this.starItems.forEach((item, index) => {
       if (index < num) {
+        item.classList.remove('full-star');
+        item.classList.remove('half-star');
         item.classList.add('full-star');
       } else {
         item.classList.remove('full-star');
@@ -109,6 +111,11 @@ export const ratingHalfStarEs5 = (function(){
       
       const currentNum = index + 1,
       starItemLength = this.starItems.length;
+
+      if(_self.opts.model === LightEntire) {
+        item.mousemove = null;
+      }
+
       item.onmouseover = (event) => {
         this.lightOn(currentNum);
         (typeof this.opts.select === 'function') && this.opts.select(event, currentNum, starItemLength);
