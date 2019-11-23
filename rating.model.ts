@@ -24,6 +24,10 @@ export class Rating {
       starItem.onmouseover = (e, index) => {
         return this.lightOn(starIndex + 1);
       }
+      starItem.onclick = (e, index) => {
+        this.totalStar = starIndex + 1;
+        return this.lightOn(starIndex + 1);
+      }
     });
     this.starWrapperEle.onmouseout = () => {
       return this.lightOn(this.totalStar);

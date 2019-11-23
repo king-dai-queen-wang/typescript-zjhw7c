@@ -15,6 +15,8 @@ li{
 }
 .rating-item{
   float: left;
+  background-position: 0, 0;
+  transition: background-position, 0.3s;
   width: 36px;
   height: 36px;
   cursor: pointer;
@@ -23,8 +25,10 @@ li{
 
 .rating-item.full-star{
   background-position: 0, 36px;
+  transition: background-position, 0.3s;
 }
 
 .rating-item.half-star{
   background-position: 0, 72px;
+  transition: background-position, 0.3s;
 }
