@@ -21,6 +21,8 @@ const ratingFullStarEs5 = ratingEs5.init('#rating-full-star-es5', {
   }
   });
 
+
+// 第三种选择半颗ES5实现
   const ratingHalfEs5 = ratingHalfStarEs5.init('#rating-half-star-es5', {
 num: 2.5,
   select: function (event, num, total) {

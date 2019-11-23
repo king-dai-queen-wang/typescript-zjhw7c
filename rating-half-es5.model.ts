@@ -42,13 +42,13 @@ export const ratingHalfStarEs5 = (function(){
       
       const currentNum = index + 1,
       starItemLength = this.starItems.length;
-      
+      let offsetNum = 0;// 偏移值
       // bind move func
       // 鼠标先经过move事件，再进click事件
       item.onmousemove = (event) => {
         // （鼠标距屏幕最左边的距离pageX - 元素最左边距屏幕最左边的值offsetLeft 之差） < 元素自身的一半的话
-        let offsetNum = 0;// 偏移值
-        if(event.pageX - item.offsetLeft < (item.style.width /2)) {
+        
+        if(event.pageX - item.offsetLeft < (item.offsetWidth /2)) {
           _self.opts.add = 0.5;
         } else {
           _self.opts.add = 1;
