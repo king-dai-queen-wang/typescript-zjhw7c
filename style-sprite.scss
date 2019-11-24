@@ -25,6 +25,26 @@ $background-img: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAS4AAAEcCAYAAAB5
   }
 }
 
+.rating-1{
+  background-position-y: -56.8 * 0px;
+}
+
+.rating-2{
+  background-position-y: -56.8px * 1; 
+}
+
+.rating-3{
+  background-position-y: -56.8px * 2;
+}
+
+.rating-4{
+  background-position-y: -56.8px * 3;
+}
+
+.rating-5{
+  background-position-y: -56.8px * 4;
+}
+
 .rating-sprite-item-1{
   left: 0;
   &:hover{
