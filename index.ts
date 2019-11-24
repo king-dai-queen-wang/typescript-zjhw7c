@@ -34,6 +34,7 @@ const ratingFullStarEs5 = ratingEs5.init('#rating-full-star-es5', {
       chosen: function(num, total) {
         console.log(this);
         console.log('当前选中' + num, '总计' + total);
+        ratingHalfStarExtendEs5.init('#rating-half-star-es5', 'unbindEvent')
       }
       });
       

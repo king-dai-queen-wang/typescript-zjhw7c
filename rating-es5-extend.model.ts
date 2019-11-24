@@ -1,5 +1,5 @@
 export const ratingHalfStarExtendEs5 = (function(){
-
+  var rating;
   // 此类的目的是为了子类继承父类的时候调用一次父类的构造函数，
   var extend = function(subClass, superClass) {
     // 临时的F类 构造函数为空
@@ -68,6 +68,15 @@ export const ratingHalfStarExtendEs5 = (function(){
     })
   };
 
+  Light.prototype.unbindEvent = function() {
+    this.starItems.forEach((item, index) => {
+      item.onclick = null;
+      item.onmousemove = null;
+      item.onmouseout = null;
+      item.onmouseover = null;
+    })
+  }
+
   Light.prototype.select = function() {
     throw new Error('子类必须实现此方法');
   }
@@ -131,7 +140,7 @@ export const ratingHalfStarExtendEs5 = (function(){
 
     },
     chosen: function() {
-
+      
     }
   }
 
@@ -140,13 +149,23 @@ export const ratingHalfStarExtendEs5 = (function(){
     'LightHalf': LightHalf
   }
 
-  var init = function(el, options) {
+  var init = function(el, option) {
+    
     // 初始化配置参数，若用户没有传参，则用defaults的参数，若有传参，则合并用户传参和默认参数给options
-    options = Object.assign({}, defaults, options);
+    const options = Object.assign({}, defaults, typeof option === 'object' && option);
     if(!mode[options.model]) {
       options.model = 'LightEntire';
     }
-    new mode[options.model](el, options).init();
+   
+   if (!rating){
+     rating =  new mode[options.model](el, option);
+      rating.init();
+   }
+
+   // 接触绑定
+   if(typeof option === 'string'){
+     rating[option]();
+   }
   }
   return {
     init: init
