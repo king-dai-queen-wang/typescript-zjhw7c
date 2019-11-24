@@ -1,5 +1,6 @@
 export const ratingHalfStarExtendEs5 = (function(){
-  var rating;
+  var ratingHalf;
+  var ratingEntire;
   // 此类的目的是为了子类继承父类的时候调用一次父类的构造函数，
   var extend = function(subClass, superClass) {
     // 临时的F类 构造函数为空
@@ -157,14 +158,22 @@ export const ratingHalfStarExtendEs5 = (function(){
       options.model = 'LightEntire';
     }
    
-   if (!rating){
-     rating =  new mode[options.model](el, option);
-      rating.init();
+   if (!ratingHalf && mode[options.model] === LightHalf){
+      ratingHalf =  new mode[options.model](el, option);
+      ratingHalf.unbindEvent();
+      ratingHalf.init();
+   }
+
+   if (!ratingEntire && mode[options.model] === LightEntire){
+      ratingEntire =  new mode[options.model](el, option);
+      ratingEntire.unbindEvent();
+      ratingEntire.init();
    }
 
    // 接触绑定
    if(typeof option === 'string'){
-     rating[option]();
+     ratingHalf[option]();
+     ratingEntire[option]();
    }
   }
   return {
