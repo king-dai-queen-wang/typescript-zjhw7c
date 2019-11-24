@@ -26,8 +26,8 @@ const ratingFullStarEs5 = ratingEs5.init('#rating-full-star-es5', {
   document.querySelector('#select-rating-type').onchange = 
   function (event) {
     const ratingHalfEs5 = ratingHalfStarExtendEs5.init('#rating-half-star-es5', {
-    num: 2.5,
-    model: event.target.value,
+      num: 2.5,
+      model: event.target.value,
       select: function (event, num, total) {
         console.log(event.target, '当前滑过' + num, '总计' + total);
       },
