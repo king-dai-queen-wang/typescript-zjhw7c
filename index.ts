@@ -3,8 +3,8 @@ import './style.css';
 import './rating-3-use-css/css/style-sprite.scss';
 import {Rating} from './rating-1/rating-1-es6.model.ts';
 import {ratingEs5} from './rating-2/rating-2-es5-full-star.model';
-import {ratingHalfStarEs5} from './rating-half-es5.model';
-import {ratingHalfStarExtendEs5} from './rating-es5-extend.model';
+import {ratingHalfStarEs5} from './rating-2/rating-2-half-es5.model';
+import {ratingHalfStarExtendEs5} from './rating-2/rating-2-es5-extend.model';
 const num = 3;
 // 第一种ES6实现
 const rating =  new Rating('#rating-full-star', num);
