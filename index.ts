@@ -7,6 +7,7 @@ import {Rating} from './rating-1/rating-1-es6.model.ts';
 import {ratingEs5} from './rating-2/rating-2-es5-full-star.model';
 import {ratingHalfStarEs5} from './rating-2/rating-2-half-es5.model';
 import {ratingHalfStarExtendEs5} from './rating-2/rating-2-es5-extend.model';
+import {rating5Es5} from './rating-5/rating-5-es5.model';
 const num = 3;
 // 第一种ES6实现
 const rating =  new Rating('#rating-full-star', num);
@@ -43,3 +44,6 @@ const ratingFullStarEs5 = ratingEs5.init('#rating-full-star-es5', {
       
   }
 
+
+// 第五种ES5实现
+const rating5 = rating5Es5.init('#rating-5', {});
