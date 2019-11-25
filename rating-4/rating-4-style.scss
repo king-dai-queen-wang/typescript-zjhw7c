@@ -6,10 +6,16 @@ $background-img: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAABwCAYAAACQ
   height: 33px;
   background: url($background-img) repeat-x;
 
+  &:hover{
+    .rating-sprite-4-item{
+       background-image: none;
+    }
+  }
+
   input:checked + .rating-sprite-4-item{
     left: 0;
     z-index: 2;
-    background: url($background-img) repeat-x 0, 33px
+    background: url($background-img) repeat-x 0,33px;
   }
 }
 
@@ -22,13 +28,16 @@ $background-img: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAABwCAYAAACQ
   &:hover{
     left: 0;
     z-index: 2;
-    background: url($background-img) repeat-x 0, 33px;
+    background: url($background-img) repeat-x 0,33px !important;
   }
   label{
     display: inline-block;
     width: 100%;
     height: 100%;
     cursor: pointer;
+  }
+  input:checked + .rating-sprite-4-item ~ .rating-sprite-4-item:hover{
+    z-index: 0;
   }
 }
 
@@ -40,7 +49,7 @@ $background-img: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAABwCAYAAACQ
 }
 
 // input点亮并且还 后面紧跟的item
-#rating-4-radio-1：checked + .rating-sprite-4-item{
+#rating-4-radio-1:checked + .rating-sprite-4-item{
   width: 33px;
 }
 
@@ -52,8 +61,8 @@ $background-img: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAABwCAYAAACQ
 }
 
 // input点亮并且还 后面紧跟的item
-#rating-4-radio-2：checked + .rating-sprite-4-item{
-  width: 33px;
+#rating-4-radio-2:checked + .rating-sprite-4-item{
+  width: 33px * 2;
 }
 
 .rating-sprite-4-item-3{
@@ -64,8 +73,8 @@ $background-img: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAABwCAYAAACQ
 }
 
 // input点亮并且还 后面紧跟的item
-#rating-4-radio-3：checked + .rating-sprite-4-item{
-  width: 33px;
+#rating-4-radio-3:checked + .rating-sprite-4-item{
+  width: 33px * 3;
 }
 
 .rating-sprite-4-item-4{
@@ -76,8 +85,8 @@ $background-img: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAABwCAYAAACQ
 }
 
 // input点亮并且还 后面紧跟的item
-#rating-4-radio-4：checked + .rating-sprite-4-item{
-  width: 33px;
+#rating-4-radio-4:checked + .rating-sprite-4-item{
+  width: 33px * 4;
 }
 
 .rating-sprite-4-item-5{
@@ -88,6 +97,6 @@ $background-img: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAABwCAYAAACQ
 }
 
 // input点亮并且还 后面紧跟的item
-#rating-4-radio-5：checked + .rating-sprite-4-item{
-  width: 33px;
+#rating-4-radio-5:checked + .rating-sprite-4-item{
+  width: 33px * 5;
 }
