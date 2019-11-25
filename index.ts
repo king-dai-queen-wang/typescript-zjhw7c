@@ -2,6 +2,7 @@
 import './style.css';
 import './rating-3-use-css/css/style-sprite.scss';
 import './rating-4/rating-4-style.scss';
+import './rating-5/rating-5-style.scss';
 import {Rating} from './rating-1/rating-1-es6.model.ts';
 import {ratingEs5} from './rating-2/rating-2-es5-full-star.model';
 import {ratingHalfStarEs5} from './rating-2/rating-2-half-es5.model';
