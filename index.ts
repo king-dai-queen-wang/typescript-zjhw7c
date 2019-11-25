@@ -1,7 +1,7 @@
 // Import stylesheets
 import './style.css';
 import './rating-3-use-css/css/style-sprite.scss';
-import {Rating} from './rating.model.ts';
+import {Rating} from './rating-1/rating-1-es6.model.ts';
 import {ratingEs5} from './rating-es5.model';
 import {ratingHalfStarEs5} from './rating-half-es5.model';
 import {ratingHalfStarExtendEs5} from './rating-es5-extend.model';
