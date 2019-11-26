@@ -1,10 +1,29 @@
 export const rating5Es5 = (function(){
   var ratingMap = new Map();
+  // 策略 
+  var strategies = {
+    entire: function() { // 整棵星星
+      return 1;
+    },
+    half: function() { // 一半星星
+      return 2;
+    },
+    quarter: function() { // 1/4星星
+      return 4;
+    }
+  }
   // 评分构造函数
     var Rating = function(el, options) {
       this.ele = document.querySelector(el);
       this.opts = Object.assign({}, Rating.DEFAULTS, options);
-      this.itemWidth = 33;
+      // ratio 系数
+      if(!strategies[this.opts.mode]) {
+        this.opts.mode = 'entire';
+      }
+      this.ratio = strategies[this.opts.mode]();
+      this.itemWidth = 33 / this.ratio;
+      this.opts.total *= this.ratio;
+      this.num *= this.ratio;
       this.displayWidth = this.opts.num * this.itemWidth;  // 展示层的默认宽度
     }
 
@@ -12,6 +31,7 @@ export const rating5Es5 = (function(){
       total: 5,
       num: 1, // 默认点亮2颗
       readOnly: false,
+      mode: 'entire', // m默认点亮整棵
       select: function(){},
       chosen: function(){}
     }

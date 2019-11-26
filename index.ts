@@ -49,6 +49,7 @@ const ratingFullStarEs5 = ratingEs5.init('#rating-full-star-es5', {
 const rating5 = rating5Es5.init('#rating-5', {
   total: 6,
   num: 2,
+  mode: 'quarter',
   readOnly: false,
   select: function(count, total) {
     console.log('select', this);
