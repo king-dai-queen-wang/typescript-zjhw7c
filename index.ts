@@ -48,14 +48,15 @@ const ratingFullStarEs5 = ratingEs5.init('#rating-full-star-es5', {
 // 第五种ES5实现
 const rating5 = rating5Es5.init('#rating-5', {
   total: 6,
-  num: 3,
+  num: 2,
   readOnly: false,
   select: function(count, total) {
-    console.log(this);
+    console.log('select', this);
     console.log(count + '/' + total);
   },
   chosen: function(count, total) {
-    console.log(this);
+    console.log('chosen', this);
     console.log(count + '/' + total);
+    rating5Es5.init('#rating-5', 'unbindEvent')
   }
 });
